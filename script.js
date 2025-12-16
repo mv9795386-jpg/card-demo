@@ -1,84 +1,106 @@
+const card = document.getElementById("card");
+const stage = document.getElementById("stage");
+
 const song = document.getElementById("song");
 const playBtn = document.getElementById("playBtn");
 const celebrateBtn = document.getElementById("celebrateBtn");
 const typeBox = document.getElementById("typeText");
 
 const message =
-"Aap humare hero ho ❤️\n" +
-"Aapki sehat, khushi aur lambi umar ke liye duaein 🙏\n" +
-"Thank you for everything Papa.";
+"Papa, aap humare hero ho ❤️\n" +
+"Aapki sehat, khushi aur lambi umar ke liye duaen 🙏\n" +
+"Thank you for everything. Love you!";
 
 let i = 0;
 function typeEffect(){
   if(i < message.length){
     typeBox.innerHTML += message[i] === "\n" ? "<br>" : message[i];
     i++;
-    setTimeout(typeEffect, 45);
+    setTimeout(typeEffect, 32);
   }
 }
 typeEffect();
 
-// Music play / pause
+// Music play/pause (mobile requires user click)
 playBtn.addEventListener("click", () => {
   if (song.paused) {
     song.play();
-    playBtn.textContent = "⏸️ Music Playing";
+    playBtn.textContent = "⏸ Playing";
   } else {
     song.pause();
-    playBtn.textContent = "▶️ Play Music";
+    playBtn.textContent = "▶ Play Music";
   }
 });
 
-// Celebrate button confetti
-celebrateBtn.addEventListener("click", fireConfetti);
+// Confetti (premium, subtle)
+celebrateBtn.addEventListener("click", () => fireConfetti(140));
 
-// Auto soft confetti on load
-window.addEventListener("load", () => {
-  setTimeout(fireConfetti, 800);
-});
-
-// Confetti function
-function fireConfetti(){
-  for(let i=0;i<120;i++){
+function fireConfetti(count){
+  for(let k=0;k<count;k++){
     const c = document.createElement("div");
     c.style.position="fixed";
-    c.style.left=Math.random()*100+"vw";
-    c.style.top="-10px";
-    c.style.width="6px";
-    c.style.height="10px";
-    c.style.background=`hsl(${Math.random()*360},90%,65%)`;
-    c.style.borderRadius="2px";
-    c.style.opacity="0.8";
+    c.style.left = Math.random()*100+"vw";
+    c.style.top = "-12px";
+    c.style.width = (5 + Math.random()*4) + "px";
+    c.style.height = (10 + Math.random()*10) + "px";
+    c.style.background = `hsl(${Math.random()*360},90%,62%)`;
+    c.style.borderRadius = "2px";
+    c.style.opacity = "0.9";
     c.style.pointerEvents="none";
     c.style.zIndex="9999";
+    c.style.transform = `rotate(${Math.random()*360}deg)`;
     document.body.appendChild(c);
 
-    const d = 2500 + Math.random()*2000;
+    const dur = 2200 + Math.random()*2200;
     c.animate(
-      [{transform:"translateY(0)"},{transform:"translateY(110vh)"}],
-      {duration:d,easing:"ease-in"}
+      [
+        { transform: c.style.transform + " translateY(0)" },
+        { transform: c.style.transform + ` translateY(115vh)` }
+      ],
+      { duration: dur, easing: "cubic-bezier(.2,.8,.2,1)" }
     );
-    setTimeout(()=>c.remove(), d);
+    setTimeout(()=>c.remove(), dur);
   }
 }
 
-// Floating hearts background
-setInterval(() => {
-  const h = document.createElement("div");
-  h.innerText = "❤️";
-  h.style.position="fixed";
-  h.style.left=Math.random()*100+"vw";
-  h.style.bottom="-20px";
-  h.style.fontSize=(14+Math.random()*18)+"px";
-  h.style.opacity="0.8";
-  h.style.zIndex="1";
-  document.body.appendChild(h);
+// --- Premium 3D Tilt (touch drag) ---
+let down = false;
 
-  const t = 4000 + Math.random()*2000;
-  h.animate(
-    [{transform:"translateY(0)",opacity:0.8},
-     {transform:"translateY(-110vh)",opacity:0}],
-    {duration:t,easing:"linear"}
-  );
-  setTimeout(()=>h.remove(), t);
-}, 900);
+function applyTilt(clientX, clientY){
+  const r = stage.getBoundingClientRect();
+  const x = (clientX - r.left) / r.width;   // 0..1
+  const y = (clientY - r.top) / r.height;   // 0..1
+  const rotY = (x - 0.5) * 16;
+  const rotX = (0.5 - y) * 12;
+  card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+}
+
+function resetTilt(){
+  card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+}
+
+stage.addEventListener("pointerdown", (e) => {
+  down = true;
+  stage.setPointerCapture?.(e.pointerId);
+  applyTilt(e.clientX, e.clientY);
+});
+
+stage.addEventListener("pointermove", (e) => {
+  if(!down) return;
+  applyTilt(e.clientX, e.clientY);
+});
+
+stage.addEventListener("pointerup", () => {
+  down = false;
+  resetTilt();
+});
+
+stage.addEventListener("pointerleave", () => {
+  down = false;
+  resetTilt();
+});
+
+// Auto subtle confetti once (small)
+window.addEventListener("load", () => {
+  setTimeout(()=>fireConfetti(80), 700);
+});
