@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card" id="card">
+    <div class="front">
+      <h3>BANK CARD</h3>
+      <p id="number">•••• •••• •••• ••••</p>
+      <div class="row">
+        <span id="name">YOUR NAME</span>
+        <span id="exp">MM/YY</span>
+      </div>
+    </div>
+
+    <div class="back">
+      <div class="stripe"></div>
+      <p>CVV</p>
+      <div class="cvv" id="cvv">***</div>
+    </div>
+  </div>
+
+  <button onclick="flip()">Flip Card</button>
+
+  <input placeholder="Card Number" oninput="setNumber(this.value)">
+  <input placeholder="Name" oninput="setName(this.value)">
+  <input placeholder="Expiry MM/YY" oninput="setExp(this.value)">
+  <input placeholder="CVV" oninput="setCvv(this.value)">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
