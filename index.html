@@ -1,35 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Papa 🎂</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Papa</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Cache-bust so GitHub Pages shows latest -->
+  <link rel="icon" href="data:,">
 </head>
 <body>
+  <div class="bg"></div>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
 
-<div class="bg"></div>
+  <main class="wrap">
+    <header class="top">
+      <div class="badge">🎂 Birthday Surprise</div>
+      <h1>Happy Birthday, Papa</h1>
+      <p class="sub">Aapki sehat, khushi aur lambi umar ke liye duaen 🙏</p>
+    </header>
 
-<div class="container">
-  <div class="card">
-    <div class="photo-box">
-      <img src="papa.jpg" alt="Papa">
-      <div class="ring"></div>
-    </div>
+    <section class="stage" id="stage" aria-label="3D Card">
+      <div class="glass-card" id="card">
+        <div class="shine"></div>
+        <div class="grain"></div>
 
-    <h1>🎉 Happy Birthday Papa 🎉</h1>
+        <div class="card-head">
+          <div class="mark">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="mini">Made with ❤️</div>
+        </div>
 
-    <p id="typeText"></p>
+        <div class="photo-frame">
+          <!-- Upload your image as papa.jpg in same repo -->
+          <img src="papa.jpg" alt="Papa" />
+        </div>
 
-    <div class="buttons">
-      <button id="playBtn">▶️ Play Music</button>
-      <button id="celebrateBtn">🎊 Celebrate</button>
-    </div>
-  </div>
-</div>
+        <div class="text">
+          <div class="title">🎉 Happy Birthday Papa</div>
+          <div class="msg" id="typeText"></div>
+        </div>
 
-<audio id="song" src="birthday.mp3"></audio>
+        <div class="actions">
+          <button class="btn primary" id="playBtn">▶ Play Music</button>
+          <button class="btn" id="celebrateBtn">Celebrate ✨</button>
+        </div>
 
-<script src="script.js"></script>
+        <div class="footer">
+          <span>Tap & drag the card</span>
+          <span class="sep">•</span>
+          <span>Premium Glass</span>
+        </div>
+      </div>
+    </section>
+
+    <audio id="song" src="birthday.mp3" preload="auto"></audio>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
