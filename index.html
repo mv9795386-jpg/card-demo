@@ -1,46 +1,60 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Happy Birthday Papa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
 
-<div class="page">
-  <div class="card">
-    
-    <div class="photo-frame">
-      <img src="papa.jpg" alt="Papa">
-    </div>
+  <main class="wrap">
+    <section class="hero">
+      <div class="glass">
+        <div class="topline">
+          <span class="chip">🎁 Surprise</span>
+          <span class="chip soft">For Papa</span>
+        </div>
 
-    <h1>🎂 Happy Birthday Papa 🎂</h1>
+        <div class="portrait">
+          <img src="papa.jpg" alt="Papa" />
+          <div class="portraitGlow"></div>
+        </div>
 
-    <p class="message">
-      Papa,<br><br>
-      Aap sirf mere papa nahi ho,<br>
-      aap meri himmat, meri pehchaan<br>
-      aur meri sabse badi taqat ho ❤️<br><br>
+        <h1 class="title">
+          <span class="shineText">Happy Birthday</span>
+          <span class="name">Papa</span>
+        </h1>
 
-      Bhagwan aapko hamesha<br>
-      sehat, khushi aur lambi umar de 🙏<br><br>
+        <p class="sub">
+          Aap hi meri himmat ho. Aap hi meri pehchaan ho. ❤️
+        </p>
 
-      Aapke bina sab adhoora lagta hai.<br>
-      <b>Love you Papa.</b>
-    </p>
+        <p class="msg" id="msg">
+          Aapki sehat, khushi aur lambi umar ke liye dil se duaen. 🙏
+        </p>
 
-    <button id="playBtn">🎵 Play Birthday Song</button>
+        <div class="actions">
+          <button class="btn primary" id="playBtn">▶ Play Music</button>
+          <button class="btn" id="wowBtn">✨ Make it WOW</button>
+        </div>
 
-    <div class="footer">
-      — Aapka beta
-    </div>
+        <div class="footer">
+          <span>Tap “WOW” for effects</span>
+          <span class="dot">•</span>
+          <span>Made with love</span>
+        </div>
 
-  </div>
-</div>
+        <div class="borderGlow"></div>
+        <div class="grain"></div>
+      </div>
+    </section>
 
-<audio id="song" src="birthday.mp3"></audio>
-<script src="script.js"></script>
+    <audio id="song" src="birthday.mp3" preload="auto"></audio>
+  </main>
 
+  <script src="script.js"></script>
 </body>
-</html>
+  </html>
