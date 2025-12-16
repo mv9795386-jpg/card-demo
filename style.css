@@ -5,11 +5,11 @@
 html,body{
   margin:0;
   height:100%;
-  font-family: "Segoe UI", Georgia, serif;
+  font-family:"Segoe UI", Georgia, serif;
 }
 
 body{
-  background: linear-gradient(135deg,#0f172a,#1e1b4b,#312e81);
+  background:#0f172a;
   color:#1f2937;
 }
 
@@ -17,9 +17,9 @@ body{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(600px 400px at 20% 10%, rgba(236,72,153,.35), transparent 60%),
-    radial-gradient(600px 400px at 80% 30%, rgba(99,102,241,.35), transparent 60%);
-  filter: blur(20px);
+    radial-gradient(700px 500px at 20% 10%, rgba(236,72,153,.35), transparent 60%),
+    radial-gradient(700px 500px at 80% 30%, rgba(99,102,241,.35), transparent 60%),
+    linear-gradient(180deg,#0f172a,#1e1b4b);
   z-index:-1;
 }
 
@@ -32,46 +32,56 @@ body{
 }
 
 .card{
-  max-width:420px;
+  max-width:430px;
   width:100%;
-  background:#f9fafb;
-  border-radius:22px;
+  background: linear-gradient(180deg,#ffffff,#f3f4f6);
+  border-radius:26px;
   padding:22px;
   text-align:center;
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+  position:relative;
 }
 
 .photo-box{
   width:100%;
-  height:260px;          /* FIXED HEIGHT */
-  border-radius:18px;
+  height:260px;
+  border-radius:20px;
   overflow:hidden;
   margin-bottom:18px;
-  border:5px solid #fde68a;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
+  border:6px solid #fde68a;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  background:#000;
 }
 
 .photo-box img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transform:scale(1.05);
+  object-position: center top; /* 👈 HEAD SAFE */
 }
 
 h1{
   font-size:26px;
-  margin:10px 0 14px;
+  margin:10px 0 12px;
   color:#4c1d95;
+}
+
+.divider{
+  width:80px;
+  height:4px;
+  margin:0 auto 16px;
+  border-radius:4px;
+  background:linear-gradient(90deg,#f59e0b,#ec4899,#8b5cf6);
 }
 
 .message{
   font-size:16px;
-  line-height:1.65;
+  line-height:1.7;
   color:#374151;
 }
 
 .buttons{
-  margin-top:20px;
+  margin-top:22px;
   display:flex;
   gap:12px;
   justify-content:center;
@@ -79,14 +89,14 @@ h1{
 }
 
 button{
-  padding:11px 20px;
+  padding:11px 22px;
   font-size:15px;
   border:none;
   border-radius:30px;
   cursor:pointer;
   color:white;
   background:linear-gradient(135deg,#7c3aed,#ec4899);
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  box-shadow:0 8px 22px rgba(0,0,0,.3);
 }
 
 button:active{
