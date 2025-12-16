@@ -13,7 +13,7 @@ playBtn.addEventListener("click", () => {
 });
 
 wowBtn.addEventListener("click", () => {
-  for(let i=0;i<120;i++){
+  for(let i=0;i<140;i++){
     const c = document.createElement("div");
     c.style.position="fixed";
     c.style.left=Math.random()*100+"vw";
