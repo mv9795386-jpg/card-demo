@@ -1,39 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Card</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Premium 3D Card Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg"></div>
 
-<div class="container">
-  <div class="card" id="card">
-    <div class="front">
-      <h3>BANK CARD</h3>
-      <p id="number">•••• •••• •••• ••••</p>
-      <div class="row">
-        <span id="name">YOUR NAME</span>
-        <span id="exp">MM/YY</span>
+  <main class="wrap">
+    <header class="top">
+      <h1>Premium 3D ATM Card</h1>
+      <p>Tap / drag to tilt • Flip for back side • Inputs se live update</p>
+    </header>
+
+    <section class="card-area">
+      <div class="controls">
+        <button class="btn" id="flipBtn">Flip</button>
+
+        <div class="brands">
+          <button class="pill is-active" data-brand="visa">VISA</button>
+          <button class="pill" data-brand="master">MasterCard</button>
+          <button class="pill" data-brand="rupay">RuPay</button>
+        </div>
       </div>
-    </div>
 
-    <div class="back">
-      <div class="stripe"></div>
-      <p>CVV</p>
-      <div class="cvv" id="cvv">***</div>
-    </div>
-  </div>
+      <div class="scene" id="scene">
+        <div class="card" id="card" data-brand="visa">
+          <!-- FRONT -->
+          <div class="face front">
+            <div class="holo"></div>
+            <div class="noise"></div>
 
-  <button onclick="flip()">Flip Card</button>
+            <div class="row">
+              <div class="bank">
+                <div class="bank-mark"></div>
+                <div class="bank-text">
+                  <div class="bank-name">PREMIUM BANK</div>
+                  <div class="bank-sub">PLATINUM • DEBIT</div>
+                </div>
+              </div>
 
-  <input placeholder="Card Number" oninput="setNumber(this.value)">
-  <input placeholder="Name" oninput="setName(this.value)">
-  <input placeholder="Expiry MM/YY" oninput="setExp(this.value)">
-  <input placeholder="CVV" oninput="setCvv(this.value)">
-</div>
+              <div class="brand-badge" id="brandBadge" aria-label="Card network"></div>
+            </div>
 
-<script src="script.js"></script>
+            <div class="row mid">
+              <div class="chip">
+                <div class="chip-line"></div>
+                <div class="chip-line"></div>
+                <div class="chip-line"></div>
+              </div>
+
+              <div class="contactless" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="number" id="cardNumber">•••• •••• •••• ••••</div>
+
+            <div class="row bottom">
+              <div class="col">
+                <div class="label">CARD HOLDER</div>
+                <div class="value" id="cardName">YOUR NAME</div>
+              </div>
+              <div class="col right">
+                <div class="label">VALID THRU</div>
+                <div class="value" id="cardExp">MM/YY</div>
+              </div>
+            </div>
+
+            <div class="serial">
+              <span class="label">CARD ID</span>
+              <span class="value" id="cardId">0000 0000</span>
+            </div>
+          </div>
+
+          <!-- BACK -->
+          <div class="face back">
+            <div class="noise"></div>
+            <div class="magstripe"></div>
+
+            <div class="sig">
+              <div class="sigbar"></div>
+              <div class="cvvbox">
+                <div class="cvvlabel">CVV</div>
+                <div class="cvv" id="cardCvv">***</div>
+              </div>
+            </div>
+
+            <div class="back-row">
+              <div class="fine">
+                Demo only. Don’t enter real card details.
+              </div>
+              <div class="mini-badge" id="brandBadgeMini"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form">
+      <div class="field">
+        <label>Card Number</label>
+        <input id="numberInput" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" />
+      </div>
+
+      <div class="field">
+        <label>Card Holder</label>
+        <input id="nameInput" placeholder="e.g. Mukul" maxlength="26" />
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>Expiry (MM/YY)</label>
+          <input id="expInput" inputmode="numeric" placeholder="08/28" maxlength="5" />
+        </div>
+        <div class="field">
+          <label>CVV</label>
+          <input id="cvvInput" inputmode="numeric" placeholder="123" maxlength="4" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">Hosted on GitHub Pages • Premium 3D demo</footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-</html>
+  </html>
