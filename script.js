@@ -1,38 +1,39 @@
 const song = document.getElementById("song");
 const playBtn = document.getElementById("playBtn");
-const confettiBtn = document.getElementById("confettiBtn");
+const celebrateBtn = document.getElementById("celebrateBtn");
 
-playBtn.addEventListener("click", async () => {
-  try{
-    await song.play();
-    playBtn.textContent = "⏸️ Playing...";
-  }catch(e){
-    alert("Tap again to allow music 🎵");
+playBtn.addEventListener("click", () => {
+  if (song.paused) {
+    song.play();
+    playBtn.textContent = "⏸️ Music Playing";
+  } else {
+    song.pause();
+    playBtn.textContent = "▶️ Play Music";
   }
 });
 
-confettiBtn.addEventListener("click", () => {
+celebrateBtn.addEventListener("click", () => {
   for(let i=0;i<120;i++){
-    const s = document.createElement("span");
-    s.style.position="fixed";
-    s.style.left=Math.random()*100+"vw";
-    s.style.top="-10px";
-    s.style.width="8px";
-    s.style.height="12px";
-    s.style.background=`hsl(${Math.random()*360},90%,60%)`;
-    s.style.opacity=".9";
-    s.style.transform=`rotate(${Math.random()*360}deg)`;
-    s.style.borderRadius="2px";
-    s.style.pointerEvents="none";
-    s.style.zIndex="9999";
-    document.body.appendChild(s);
+    const conf = document.createElement("div");
+    conf.style.position="fixed";
+    conf.style.left=Math.random()*100+"vw";
+    conf.style.top="-10px";
+    conf.style.width="8px";
+    conf.style.height="14px";
+    conf.style.background=`hsl(${Math.random()*360},90%,60%)`;
+    conf.style.borderRadius="2px";
+    conf.style.zIndex="9999";
+    conf.style.pointerEvents="none";
+    document.body.appendChild(conf);
 
-    const dur = 2000+Math.random()*2000;
-    s.animate([
-      { transform: s.style.transform, top:"-10px" },
-      { transform: s.style.transform, top:"110vh" }
-    ],{ duration: dur, easing:"ease-in" });
+    const fall = conf.animate([
+      { transform:"translateY(0)" },
+      { transform:"translateY(110vh)" }
+    ],{
+      duration:2000+Math.random()*2000,
+      easing:"ease-in"
+    });
 
-    setTimeout(()=>s.remove(), dur);
+    fall.onfinish = () => conf.remove();
   }
 });
