@@ -1,66 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Happy Birthday Papa</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Cache-bust so GitHub Pages shows latest -->
-  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="glow g1"></div>
-  <div class="glow g2"></div>
 
-  <main class="wrap">
-    <header class="top">
-      <div class="badge">🎂 Birthday Surprise</div>
-      <h1>Happy Birthday, Papa</h1>
-      <p class="sub">Aapki sehat, khushi aur lambi umar ke liye duaen 🙏</p>
-    </header>
+<div class="page">
+  <div class="card">
+    
+    <div class="photo-frame">
+      <img src="papa.jpg" alt="Papa">
+    </div>
 
-    <section class="stage" id="stage" aria-label="3D Card">
-      <div class="glass-card" id="card">
-        <div class="shine"></div>
-        <div class="grain"></div>
+    <h1>Happy Birthday Papa 🎂</h1>
 
-        <div class="card-head">
-          <div class="mark">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <div class="mini">Made with ❤️</div>
-        </div>
+    <p class="message">
+      Papa,<br><br>
+      Aap sirf mere papa nahi ho,<br>
+      aap meri taqat, meri pehchaan<br>
+      aur meri sabse badi seekh ho ❤️<br><br>
 
-        <div class="photo-frame">
-          <!-- Upload your image as papa.jpg in same repo -->
-          <img src="papa.jpg" alt="Papa" />
-        </div>
+      Aapki sehat, khushi<br>
+      aur lambi umar ke liye<br>
+      dil se dua karta hoon 🙏<br><br>
 
-        <div class="text">
-          <div class="title">🎉 Happy Birthday Papa</div>
-          <div class="msg" id="typeText"></div>
-        </div>
+      Hamesha aise hi muskurate rahiye.<br>
+      <b>Love you Papa.</b>
+    </p>
 
-        <div class="actions">
-          <button class="btn primary" id="playBtn">▶ Play Music</button>
-          <button class="btn" id="celebrateBtn">Celebrate ✨</button>
-        </div>
+    <button id="playBtn">🎵 Play Birthday Song</button>
 
-        <div class="footer">
-          <span>Tap & drag the card</span>
-          <span class="sep">•</span>
-          <span>Premium Glass</span>
-        </div>
-      </div>
-    </section>
+    <div class="footer">
+      — Aapka beta
+    </div>
 
-    <audio id="song" src="birthday.mp3" preload="auto"></audio>
-  </main>
+  </div>
+</div>
 
-  <script src="script.js"></script>
+<audio id="song" src="birthday.mp3"></audio>
+<script src="script.js"></script>
+
 </body>
 </html>
