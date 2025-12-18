@@ -1,4 +1,14 @@
-/* TYPEWRITER MESSAGE */
+/* MUSIC START */
+const music = document.getElementById("bgMusic");
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+
+startBtn.onclick = () => {
+  music.play().catch(()=>{});
+  startScreen.style.display = "none";
+};
+
+/* TYPEWRITER */
 const text = `Aaj ka din sirf ek birthday nahi ❤️
 balki ek bohot hi special insaan ka celebration hai 🎂
 Khush raho, muskurati raho,
@@ -6,44 +16,27 @@ aur hamesha shine karti raho ✨`;
 
 let i = 0;
 const msg = document.getElementById("message");
-
-function typeWriter() {
-  if (i < text.length) {
-    msg.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 40);
+(function type(){
+  if(i < text.length){
+    msg.innerHTML += text.charAt(i++);
+    setTimeout(type,40);
   }
-}
-typeWriter();
-
-/* MUSIC */
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-btn.onclick = () => {
-  if (music.paused) {
-    music.play().catch(()=>{});
-    btn.textContent = "🔊 Music On";
-  } else {
-    music.pause();
-    btn.textContent = "🔇 Music Off";
-  }
-};
+})();
 
 /* CONFETTI */
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
 const confetti = Array.from({length:120},()=>({
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height,
-  r: Math.random()*5+2,
-  d: Math.random()*3+2
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  r:Math.random()*5+2,
+  d:Math.random()*3+2
 }));
 
-function drawConfetti(){
+(function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   confetti.forEach(c=>{
     ctx.beginPath();
@@ -51,11 +44,10 @@ function drawConfetti(){
     ctx.fillStyle=`hsl(${Math.random()*360},100%,50%)`;
     ctx.fill();
     c.y+=c.d;
-    if(c.y>canvas.height) c.y=0;
+    if(c.y>canvas.height)c.y=0;
   });
-  requestAnimationFrame(drawConfetti);
-}
-drawConfetti();
+  requestAnimationFrame(draw);
+})();
 
 /* HEART RAIN */
 const hearts = document.getElementById("hearts");
