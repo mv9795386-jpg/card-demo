@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Birthday ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- START OVERLAY -->
+<!-- TAP TO START (MUSIC FIX) -->
 <div id="startScreen">
   <button id="startBtn">🎵 Tap to Start Surprise 🎉</button>
 </div>
 
+<!-- EFFECTS -->
 <canvas id="confetti"></canvas>
 <div id="hearts"></div>
 
+<!-- MUSIC -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- CARD -->
 <div class="card">
   <img src="photo.jpg" alt="Birthday Photo">
 
@@ -30,7 +33,10 @@
 
   <a href="photo.jpg" download class="download-btn">⬇ Download Photo</a>
 
-  <span>— From someone special 💖</span>
+  <span class="from-text">
+    Yeh <b>Mukul</b> ki taraf se ek chhoti si birthday wish 💖<br>
+    <b>Tumhara dost 😊</b>
+  </span>
 </div>
 
 <script src="script.js"></script>
