@@ -1,52 +1,40 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Papa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="bg"></div>
+<!-- Confetti -->
+<canvas id="confetti"></canvas>
 
-<div class="page">
-  <div class="card">
+<!-- Heart Rain -->
+<div id="hearts"></div>
 
-    <div class="photo-box">
-      <img src="papa.jpg" alt="Papa">
-    </div>
+<!-- Music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-    <h1>🎂 Happy Birthday Papa 🎂</h1>
+<button id="musicBtn">🔊</button>
 
-    <div class="divider"></div>
+<div class="card">
+  <img src="photo.jpg" alt="Birthday Girl" id="mainPhoto">
 
-    <p class="message">
-      Papa,<br><br>
-      Aap sirf mere papa nahi ho,<br>
-      aap meri himmat, meri pehchaan<br>
-      aur meri sabse badi taqat ho ❤️<br><br>
+  <h1>🎉 Happy Birthday 🎉</h1>
 
-      Bhagwan aapko hamesha<br>
-      sehat, khushi aur lambi umar de 🙏<br><br>
+  <p id="message"></p>
 
-      Aapke bina sab adhoora lagta hai.<br>
-      <b>Love you Papa.</b>
-    </p>
+  <!-- DOWNLOAD BUTTON -->
+  <a href="photo.jpg" download class="download-btn">
+    ⬇️ Download Photo
+  </a>
 
-    <div class="buttons">
-      <button id="playBtn">🎵 Play Music</button>
-      <button id="wowBtn">✨ Celebrate</button>
-    </div>
-
-    <div class="footer">
-      — Aapka beta
-    </div>
-
-  </div>
+  <span>— From someone special 💖</span>
 </div>
 
-<audio id="song" src="birthday.mp3"></audio>
 <script src="script.js"></script>
 </body>
-      </html>
+</html>
