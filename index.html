@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Happy Birthday ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Confetti -->
+<!-- CONFETTI -->
 <canvas id="confetti"></canvas>
 
-<!-- Heart Rain -->
+<!-- HEART RAIN -->
 <div id="hearts"></div>
 
-<!-- Music -->
-<audio id="bgMusic" autoplay loop>
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn">🔊</button>
+<!-- MUSIC BUTTON -->
+<button id="musicBtn">🔊 Tap for Music</button>
 
+<!-- CARD -->
 <div class="card">
-  <img src="photo.jpg" alt="Birthday Girl" id="mainPhoto">
+  <img src="photo.jpg" alt="Birthday Photo">
 
   <h1>🎉 Happy Birthday 🎉</h1>
 
   <p id="message"></p>
 
-  <!-- DOWNLOAD BUTTON -->
-  <a href="photo.jpg" download class="download-btn">
-    ⬇️ Download Photo
-  </a>
+  <!-- DOWNLOAD PHOTO -->
+  <a href="photo.jpg" download class="download-btn">⬇ Download Photo</a>
 
   <span>— From someone special 💖</span>
 </div>
