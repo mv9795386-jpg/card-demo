@@ -9,21 +9,18 @@
 
 <body>
 
-<!-- CONFETTI -->
-<canvas id="confetti"></canvas>
+<!-- START OVERLAY -->
+<div id="startScreen">
+  <button id="startBtn">🎵 Tap to Start Surprise 🎉</button>
+</div>
 
-<!-- HEART RAIN -->
+<canvas id="confetti"></canvas>
 <div id="hearts"></div>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MUSIC BUTTON -->
-<button id="musicBtn">🔊 Tap for Music</button>
-
-<!-- CARD -->
 <div class="card">
   <img src="photo.jpg" alt="Birthday Photo">
 
@@ -31,7 +28,6 @@
 
   <p id="message"></p>
 
-  <!-- DOWNLOAD PHOTO -->
   <a href="photo.jpg" download class="download-btn">⬇ Download Photo</a>
 
   <span>— From someone special 💖</span>
