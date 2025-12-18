@@ -8,7 +8,7 @@ startBtn.onclick = () => {
   startScreen.style.display = "none";
 };
 
-/* TYPEWRITER MESSAGE */
+/* TYPEWRITER */
 const text = `Aaj ka din sirf ek birthday nahi ❤️
 balki ek bohot hi special insaan ka celebration hai 🎂
 Khush raho, muskurati raho,
