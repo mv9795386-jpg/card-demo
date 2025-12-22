@@ -1,52 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlueFlix — Intro</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <main class="intro">
+    <div class="logo-stage" aria-label="Intro logo animation">
+      <!-- N made with 3 bars, animated like Netflix “ta-dum” style reveal -->
+      <div class="n-logo">
+        <span class="bar left"></span>
+        <span class="bar mid"></span>
+        <span class="bar right"></span>
+      </div>
 
-<!-- FIRST SURPRISE SCREEN -->
-<div id="startScreen">
-  <div class="intro-box">
-    <h2>🎁 A Special Surprise</h2>
-    <p>Someone made this just for you 💖</p>
-    <button id="startBtn">✨ Tap to Open ✨</button>
-  </div>
-</div>
-
-<!-- EFFECTS -->
-<canvas id="confetti"></canvas>
-<div id="hearts"></div>
-
-<!-- MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- MAIN CONTENT -->
-<div class="page">
-
-  <div class="card">
-    <img src="photo.jpg" alt="Birthday Photo">
-
-    <h1>🎉 Happy Birthday 🎉</h1>
-
-    <p id="message"></p>
-
-    <a href="photo.jpg" download class="download-btn">⬇ Download Photo</a>
-
-    <!-- FOOTER TEXT (SCROLL SAFE) -->
-    <div class="footer-text">
-      Yeh <b>Mukul</b> ki taraf se ek chhoti si birthday wish 💖<br>
-      <span>Tumhara dost 😊</span>
+      <div class="scanline"></div>
+      <div class="glow"></div>
     </div>
-  </div>
 
-</div>
+    <p class="skip-hint">Click to skip</p>
+  </main>
 
-<script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
