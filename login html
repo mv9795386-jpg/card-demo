@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlueFlix — Login</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="auth-body">
+  <header class="auth-header">
+    <div class="brand">
+      <div class="brand-mark">N</div>
+      <div class="brand-name">BlueFlix</div>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <section class="auth-card" aria-label="Login">
+      <h1>Sign In</h1>
+
+      <form class="auth-form" onsubmit="event.preventDefault(); alert('Demo only');">
+        <label>
+          <span>Email or phone number</span>
+          <input type="text" autocomplete="username" required />
+        </label>
+
+        <label>
+          <span>Password</span>
+          <input type="password" autocomplete="current-password" required />
+        </label>
+
+        <button class="primary-btn" type="submit">Sign In</button>
+
+        <div class="auth-row">
+          <label class="remember">
+            <input type="checkbox"/>
+            <span>Remember me</span>
+          </label>
+          <a class="help" href="#">Need help?</a>
+        </div>
+      </form>
+
+      <div class="auth-footer">
+        <p class="new">
+          New to BlueFlix? <a href="#">Sign up now</a>.
+        </p>
+        <p class="note">
+          This page is a UI clone for practice. No real authentication.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="bg-overlay"></div>
+</body>
+</html>
